@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho Acadêmico</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #add8e6; /* Azul claro */
+            color: #000;
+            font-size: 22px; /* Aumentar o tamanho da fonte */
+            position: relative;
+            overflow: hidden;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.9); /* Capa transparente */
+            padding: 40px; /* Aumentar o preenchimento */
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .title {
+            text-align: center;
+            font-size: 32px; /* Aumentar o tamanho do título */
+            font-weight: bold;
+            margin: 10px 0; /* Adicionar margem para espaçamento */
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 28px; /* Aumentar o tamanho do subtítulo */
+            margin-top: 20px; /* Adicionar margem superior */
+        }
+        .button-container-bottom {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 18px; /* Aumentar o tamanho do botão */
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes moveClouds {
+            0% {background-position: 0 0;}
+            100% {background-position: 1000px 0;}
+        }
+        .clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://example.com/path-to-cloud-background.jpg'); /* Insira a URL da imagem das nuvens */
+            background-repeat: repeat-x;
+            background-size: contain;
+            opacity: 0.3;
+            animation: moveClouds 100s linear infinite;
+            z-index: -1;
+        }
+    </style>
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="clouds"></div>
+    <div id="home" class="overlay page active">
+        <div class="title">IFPA - Instituto Federal de Educação, Ciência e Tecnologia do Pará - Campus - Castanhal</div>
+        <div class="title">Erlana Victória, Renata de Oliveira, Samy Ribeiro, Ronivaldo Freitas</div>
+        <div class="subtitle">Inglês Instrumental</div>
+        <div class="subtitle">Professora: Jeane Cleide</div>
+        
+        <div class="button-container-bottom">
+            <button class="button" onclick="showPage('summary')">Próxima Página</button>
+        </div>
+    </div>
+
+    <div id="summary" class="overlay page">
+        <h2>Sumário</h2>
+        <ol>
+            <li><a href="#" onclick="showPage('section1')">Características do Scanning</a></li>
+            <li><a href="#" onclick="showPage('section2')">Passos para usar Scanning</a></li>
+            <li><a href="#" onclick="showPage('section3')">Exemplo prático de Scanning</a></li>
+            <li><a href="#" onclick="showPage('section4')">Aplicações do Scanning</a></li>
+            <li><a href="#" onclick="showPage('section5')">Vídeo de Explicação</a></li>
+            <li><a href="#" onclick="showPage('section6')">Agradecimentos</a></li>
+            <li><a href="#" onclick="showPage('section7')">Referências</a></li>
+        </ol>
+        <div class="button-container-bottom">
+            <button class="button" onclick="showPage('home')">Página Anterior</button>
+            <button class="button" onclick="showPage('section1')">Próxima Página</button>
+        </div>
+    </div>
+
+    <div id="section1" class="overlay page">
+        <h2>Características do Scanning</h2>
+        <p>Conteúdo resumido sobre as características do Scanning...</p>
+        <div class="button-container-bottom">
+            <button class="button" onclick="showPage('summary')">Página Anterior</button>
+            <button class="button" onclick="showPage('section2')">Próxima Página</button>
+        </div>
+    </div>
+
+    <div id="section2" class="overlay page">
+        <h2>Passos para usar Scanning</h2>
+        <p>Conteúdo resumido sobre os passos para usar Scanning...</p>
+        <div class="button-container-bottom">
+            <button class="button" onclick="showPage('section1')">Página Anterior</button>
+            <button class="button" onclick="showPage('section3')">Próxima Página</button>
+        </div>
+    </div>
+
+    <div id="section3" class="overlay page">
+        <h2>Exemplo prático de Scanning</h2>
+        <p>Conteúdo resumido sobre exemplo prático de Scanning...</p>
+        <div class="button-container-bottom">
+            <button class="button" onclick="showPage('section2')">Página Anterior</button>
+            <button class="button" onclick="showPage('section4')">Próxima Página</button>
+        </div>
+    </div>
+
+    <div id="section4" class="overlay page">
+        <h2>Aplicações do Scanning</h2>
+        <p>Conteúdo resumido sobre aplicações do Scanning...</p>
+        <div class="button-container-bottom">
+            <button class="button" onclick="showPage('section3')">Página Anterior</button>
+            <button class="button" onclick="showPage('section5')">Próxima Página</button>
+        </div>
+    </div>
+
+    <div id="section5" class="overlay page">
+        <h2>Vídeo de Explicação</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/AJC6XsEk9Q4?si=LZhBE0h54b1yBAsY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="button-container-bottom">
+            <button class="button" onclick="showPage('section4')">Página Anterior</button>
+            <button class="button" onclick="showPage('section6')">Próxima Página</button>
+        </div>
+    </div>
+
+    <div id="section6" class="overlay page">
+        <h2>Agradecimentos</h2>
+        <p>Conteúdo resumido dos agradecimentos...</p>
+        <div class="button-container-bottom">
+            <button class="button" onclick="showPage('section5')">Página Anterior</button>
+            <button class="button" onclick="showPage('section7')">Próxima Página</button>
+        </div>
+    </div>
+
+    <div id="section7" class="overlay page">
+        <h2>Referências</h2>
+        <p>Conteúdo resumido das referências...</p>
+        <div class="button-container-bottom">
+            <button class="button" onclick="showPage('section6')">Página Anterior</button>
+
